@@ -53,7 +53,6 @@ public class Window extends JFrame implements ActionListener    {
         bmiField = new JTextField();
         bmiField.setBounds(70, 250, 80,80);
         add(bmiField);
-
     }
 
     private static double round (double value, int precision) {
@@ -61,13 +60,13 @@ public class Window extends JFrame implements ActionListener    {
         return (double) Math.round(value * scale) / scale;
     }
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         Window window = new Window();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent event) {
+    public void actionPerformed (ActionEvent event) {
         Object source = event.getSource();
 
         if (source == countButton) {
@@ -75,7 +74,6 @@ public class Window extends JFrame implements ActionListener    {
             weight = Double.parseDouble(weightField.getText());
             bmi = 10000 * weight/ (height * height);
             bmiRounded = round(bmi,1);
-
             bmiField.setText(String.valueOf(bmiRounded));
         }
         else if (source == resetButton) {
